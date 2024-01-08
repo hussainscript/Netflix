@@ -1,4 +1,8 @@
 
+
+
+
+
   
   @font-face {
     font-family: magnet;
@@ -8,6 +12,7 @@
     font-family: MAGNETOB;
     src: url(MAGNETOB.TTF);
   }
+ 
 body {
      font-family: magnet;
     src: url(BebasNeue-Regular.otf);
@@ -17,33 +22,53 @@ body {
     background-color: #141414;
     color: #ffffff;
 }
-/* Add the following styles to your styles.css file */
 
-/* Navigation menu styles */
+
+
+nav {
+   
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-right: 32px;
     cursor: pointer;
-    /* transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; */
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-size: large;
+    font-family: MAGNETOB;
+    position: relative;
+    transition: .4s ease;
+    padding: 10px;
 }
 
 nav ul li:hover {
-    /* color: #e50914; /* Change to your desired hover color */
-    transform: translateY(-3px); /* Add a subtle vertical shift on hover */
-    font-size: x-large; */
-    background-color: #ff4500; /* Change to your desired hover color */
-    box-shadow: 0 0 20px rgba(255, 69, 0, 0.7); /* Add a subtle glow effect on hover */
-    transform: scale(1.05); /* Add a scale animation on hover */
+    transform: translateY(-3px);
+    
+    color: #ff4500; 
+    animation: ulse 0.5s both ;
 }
-nav ul li:hover {
-    animation: ulse 0.5s infinite alternate;
-    transition: .4s ease-in-out;
+
+/* Underline fill effect */
+nav ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff4500; 
+    transition: width 0.3s ease; 
+}
+
+nav ul li:hover::after {
+    width: 100%;
 }
 
 @keyframes ulse {
@@ -51,6 +76,8 @@ nav ul li:hover {
         transform: scale(1.1);
     }
 }
+
+
 
 /* "Watch Now" button styles */
 button {
@@ -64,12 +91,12 @@ button {
 }
 
 button:hover {
-    background-color: #ff4500; /* Change to your desired hover color */
-    box-shadow: 0 0 20px rgba(255, 69, 0, 0.7); /* Add a subtle glow effect on hover */
-    transform: scale(1.05); /* Add a scale animation on hover */
+    background-color: #ff4500; 
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.7); 
+    transform: scale(1.05); 
 }
 
-/* Optional: Add a subtle pulse animation on hover */
+
 button:hover {
     animation: pulse 0.5s infinite alternate;
 }
@@ -83,6 +110,7 @@ button:hover {
 
 
 header {
+
  
     
     
@@ -90,35 +118,28 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #000000;
+    background-color: #141414;
 }
 
 .logo img {
    
-    width: 30%;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
+    width: 48%;
 }
 
 
 
-nav ul li {
-    margin-right: 50px;
-    cursor: pointer;
-    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-    font-size: large;
-    font-family: MAGNETOB;
-    src: url(MAGNETOB.TTF);
 
+
+
+
+   
 
     
-}
+
 
 
 main {
+    
     padding: 20px;
 }
 
@@ -195,3 +216,26 @@ button:hover{
 button{
     transition: .3s ease;
 } 
+/* Your existing styles */
+
+body {
+   
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+}
+
+main {
+    flex: 1; /* Make the main content area flexible to push the footer to the bottom */
+}
+
+footer {
+    background-color: #000000;
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+    /* position: sticky; */
+    bottom: 0;
+    width: 100%;
+}
